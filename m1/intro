@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+เขียนโปรแกรมใช้องค์ประกอบ 
+ชนิดข้อมูล 
+ตัวดำเนินการ
+และคำสั่งพื้นฐาน
+
+Debug : ปุ่มซ้ายสุดอันที่สี่รูปสามเหลี่ยม > run Debug > Node.js 
+variable : step run
+watch : see value on function
+step over : ไม่มองฟังก์ชันย่อย มองเป็นหนึ่งคำสั่ง
+step into : มองทุกบรรทัด ทีละบรรทัด
+step out : ออกจาก step into ออกหมดเลย
+
+file > preferences > setting > extensions > HTML > find setting.json 
+
+JS
+Interpreted : read 1 statment > compiler
+Single Threaded : ประมวลผลได้แค่ทีละอย่าง แต่ JS มีกลไกเสมือนทำหลายงาน
+Dynamically & Weakly Type :ไม่ระบุ type
+functional Programming , Support OOP
+
+=======
+เขียนโปรแกรมใช้องค์ประกอบ 
+ชนิดข้อมูล 
+ตัวดำเนินการ
+และคำสั่งพื้นฐาน
+
+Debug : ปุ่มซ้ายสุดอันที่สี่รูปสามเหลี่ยม > run Debug > Node.js 
+variable : step run
+watch : see value on function
+step over : ไม่มองฟังก์ชันย่อย มองเป็นหนึ่งคำสั่ง
+step into : มองทุกบรรทัด ทีละบรรทัด
+step out : ออกจาก step into ออกหมดเลย
+
+file > preferences > setting > extensions > HTML > find setting.json 
+
+JS
+Interpreted : read 1 statment > compiler
+Single Threaded : ประมวลผลได้แค่ทีละอย่าง แต่ JS มีกลไกเสมือนทำหลายงาน
+Dynamically & Weakly Type :ไม่ระบุ type
+functional Programming , Support OOP
+
+>>>>>>> 21b0dbbe6d074ba326d9edad2f00288a625682bc
+compiler: have translater 1 > compiler All file อ่านทั้งไฟล์

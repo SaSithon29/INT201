@@ -1,0 +1,308 @@
+jS : High order function
+    function ที่รับ parametor or return เป็น function
+assign function ให้ตัวแปร
+----------------------------------------------------------
+
+Primitive value : immutable เปลี่ยนแปลงค่าไม่ได้
+--Number 
+
+--String ''," ",`` 
+    String is Array of Character
+    use <= 2 byte
+
+--Boolean: true,false
+
+--null value=null TypeOf=Object
+
+--undefine value=undefine:ยังไม่ถูกกำหนดค่า TypeOf=String undefine
+
+
+Object
+    เข้าถึง object ด้วย key , Array ด้วย index
+
+--Object คือ คอลเลคชันของproperties
+--- one Properties contain key & value TypeOf=Object
+
+--Array TypeOf=Object
+
+----------------------------------------------------------
+
+immutable & mutable
+--immutable คือ ตัวแปรที่แก้ค่าไม่ได้ :Primitive
+
+--mutable คือ สามารถแทนที่ด้วยค่าใหม่ได้ : Object
+
+----------------------------------------------------------
+
+Identifier : กฎการตั้งชื่อใน โปรแกรม
+ส่วนใหญ่เป็น camelCase , case-sensitive, 
+ให้ขึ้นต้นด้วย'_'  $ หรือ a-z ,
+ห้ามขึ้นต้นด้วย Number, ห้ามมี space ช่องว่างในชื่อ
+
+----------------------------------------------------------
+Declaration 
+-- var: default เปลี่ยนแปลงค่าได้ ไม่อยู่ใน Block scope ;มันสามารถเข้าถึงค่าได้ในทุกระดับ
+-- let: เปลี่ยนแปลงค่าได้
+-- const: constant เป็นค่าเดียว เปลี่ยนแปลงค่าไม่ได้
+    const Primitive:UpperCase
+    const Object:camelCase
+        
+----------------------------------------------------------
+ Scope
+ Block scope: dont have var Declaration 
+ by {} ทำให้เห็นเป็นพื้นที่หนึ่งส่วน
+ ไม่สามารถเข้าถึงค่าได้จากนอก block นั้นๆ 
+
+ Function scope: have var, let, const
+ function nameFunction{ }
+ ไม่สามารถมองเห็นได้จากนอก function
+
+ Global scope :ไม่อยู่ในทั้ง 2 scope
+ สามารถเข้าถึงค่าได้จากส่วนไหนของโปรแกรมก็ได้
+        
+----------------------------------------------------------
+implicit
+-- to Boolean --
+Array : Array.length=0 => เช็ค empty Array
+undefine,null: false เสมอ
+" " : false
+"1"(non-empty StringNum) , "one"(non-StringNum): true
+0 , -0 : false
+ 1 : true
+NaN(not a number): false
+[ ] ,[1](one number) ,['a','v'] : true
+Infinity , -Infinity : true
+
+-- to String --
+undefine,null: "undefine" , "null"
+" ", "numeric"(non-empty number) , "one"(non-number):`is a String`
+0 , -0 : "0"
+1 : "1"
+NaN(not a number): "NaN"
+[ ] ,[1](one number): " ","1"
+['',''] : (use join method)
+Infinity , -Infinity : true
+
+-- Number --
+undefine,null: NaN , 0
+true , false : 1 ,0
+" ", "numeric"(non-empty number) , "one"(non-number): 0, 1.2, NaN
+0 , -0 : `is a number`
+1 : `is a number`
+NaN(not a number): `is a number`
+[ ] ,[1](one number): 0,9 
+['',''] : NaN
+Infinity , -Infinity : true
+
+
+===================================================================================================
+
+-- Expression นิพจน์ : ต้องให้ผลลัพธ์เป็นค่าหนึ่งเสมอ
+`text literal${expression:การดำเนินการ}`
+
+simple form อ้างถึง literal:ตัวแปรคงที่ ไม่มี operator ก็นับเป็น นิพจน์
+    Another :use operator, variable , literal , call Function method
+
+literal:ตัวแปรคงที่
+Variables :ตัวแปรเปลี่ยนแปลงค่าได้
+
+
+-------------------------------------------------------------------------------
+
+-- ลำดับ operators
+?.
+++, --
+! , TypeOf
+* , / , % :หารเอาเศษ
++ , -
+< , <= , > , >=
+== , != :ไม่สนไทป์ , === , !===
+&& :and
+|| :or , ??
++= , -= , *= , /= , %=
+?:
+
+y = x ++ : ใช้ก่อนบวก
+y = ++ x : บวกก่อนใช้
+
+
+-------------------------------------------------------------------------------------
+
+-- Operators
+--- Conditional Operator (?:) 
+        ต้องการ operand 3 ตัว
+        (boolean expression) ? expression true : expression false
+
+
+--- Optional chaining (?.)
+        if dont have properties value :null , undefind
+        return undefind
+
+
+--- Nullish Coalescing (??) //ต้องการ operand 2 ตัว
+        ถ้าฝั่งซ้ายมี value : return ค่าฝั่งซ้าย 
+        ถ้าเป็น null,undefind จะ return ค่าฝั่งขวา
+
+
+----------------------------------------------------------------------
+
+-- for loop
+    เข้าถึง object ด้วย key , Array ด้วย index
+
+--- for ต้องประกาศด้วย let ให้เปลี่ยนค่าได้
+        กำหนดค่าตัวแปร;ตรวจเงื่อนไข;อัพเดทตัวแปร
+
+
+--- for..of :ใช้กับ Array,String
+    ประกาศด้วย const let var ได้หมด
+        for (variable (ตัวแปรชั่วคราว) of iterable:nameArray/String)
+        ตัวแปรชั่วคราว: รับ element Array/String
+        iterable:nameArray/String
+
+
+--- for...in loop:ใช้กับ Object
+        for(variable (ตัวแปรชั่วคราว) in ชื่อobject){
+        console.log(ตัวแปรชั่วคราว) 
+            //key Of Student: id , name
+        console.log(ชื่อobject[ตัวแปรชั่วคราว]) 
+            //value Of Student: 1 2 3 , sasi
+        }
+    []:ระบุ Expression ได้    
+
+
+----------------------------------------------------------------------
+
+-- Math 
+--- Math.pow: ยกกำลัง Math.pow(5,2)=5^2
+
+--- Math.random: default 0 - <1 >> 0-0.9999...
+                Math.random()*(max-min+1)+min >> random ช่วงเลขใหม่
+        1-6     0-0.999... *(6) + 1 
+                    = 5.999...  + 1  
+   >> Math.floor(1-6.999...)=1-6
+
+--- Math.floor:ปัดลง
+
+--- Math.ceil:ปัดขึ้น
+
+
+----------------------------------------------------------------------
+
+null undefind is สเปเชียลเคส
+null == undefind
+
+-- Equality
+เมื่อมี value หนึ่งเป็น Number อีกหนึ่งเป็น String,boolean
+== เปลี่ยน String,boolean >> Number 
+
+Object >> Primitive แล้วค่อย ==
+
+----------------------------------------------------------------------
+
+-- String **** 
+    case-sensitive: use ascii code Number
+                    Number(49-n) > UpperText(65-n) > LowerText(97-n)
+
+    String.charAt: return newString from location at offer into String
+
+
+----------------------------------------------------------------------
+
+--- Primitive : เก็บ value content
+
+--- Object: เก็บ location of properties
+    เข้าถึง object ด้วย key , Array ด้วย index
+        let student={id:12,name:'sasit'}
+        let student2=student
+        // student ใช้กล่องข้อความเดียวกับ student2
+
+
+----------------------------------------------------------------------
+
+-- switch case
+        care Type == , === 
+
+while    : เช็คก่อนทำ
+do while : ทำก่อนเช็ค
+
+===================================================================================================
+
+Array : order collection of value
+
+
+for(const odd of num){ 
+    console.log(odd) //return element of Array
+ }
+
+
+
+-- การสร้าง Array
+1.  Array literals 
+    Array=[x,y,z]
+
+
+2.  Array ...spread operator
+    sread operator : ...Array 
+    ขยายตัวแปรของArrayจากชื่อArrayนั้น = แทนที่...ด้วยค่าแต่ละตัวของอาเรย์
+let a=[1,2,3]
+let b=[...a,2,4,6] => b=[1,2,3,2,4,6]
+
+
+3.  Array() Constructor
+    sugar free :ช่วยนักเขียนโค้ดสายอื่นมาเขียนได้ง่ายขึ้น ex. for OOP
+        let a =new Array() //สร้างแบบไม่กำหนดค่า
+        let a =new Array(10) //สร้างแบบกำหนดขนาด
+        let a =new Array(1,2,3) //สร้างแบบใส่ค่า *ห้ามเป็นเลขตัวเดียว;จะกลายเป็นกำหนดค่า
+
+
+4.  Array.of Constructor :กำหนดค่าเริ่มต้นใส่เป็นเลขตัวเดียวได้
+
+
+5.  Array.from Constructor : สร้างArray ที่มีการอ้างอิงค่าในอาเรย์อื่น
+
+
+
+--Read & write
+let a =['hi']
+let b =a[0]
+a[1]= 'My'
+
+
+-- delect : ลบ value ยังมี length
+    ถ้าลบไป 2 items มันจะขึ้นว่าเป็นไอเทมค่าว่าง 2 ตัว
+
+
+-- destructuring : แตก collection ออกจากกันแล้วไปเข้าถึงค่าตามที่ระบุ
+    let h=[]
+    let [ga1,ga2]=h 
+        ใส่ , เพื่อคั่นตำแหน่งได้
+
+
+
+rest operator : เก็บตัวแปรที่เหลือ ยุบที่มีหลายค่าเข้าไว้ในชื่อArray ...other 
+let [a,...b]= S //rest
+let a=[a,s,d] //spread
+
+--- .entries return [number,String][index,value]
+    for(const [index,letter] of stt.entries)
+     return [index,letter]
+
+-- sort : เรียงArrayในรูปแบบ String แล้วส่งกลับไปเป็นตำแหน่ง
+    sort((a,b) => a.length-b.length) 
+    //a=first element 
+
+
+
+function : class sitisent
+    function :assign func to varible, func >> parameter
+
+-- function declaration เข้าถึงจากนอก func ไม่ได้
+        function name(){
+            xxxx
+        }
+
+-- function Expression ละชื่อหรือไม่ก็ได้ 
+//       = expression
+let fact = function(width,height){
+    return width*height
+}
