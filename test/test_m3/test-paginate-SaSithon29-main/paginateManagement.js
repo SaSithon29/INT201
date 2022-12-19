@@ -1,3 +1,6 @@
+// browser open:import export || close: const require,module.export
+// test open:const require,module.export || close:import export
+
 // const { template } = require('@babel/core')
 import { getItemsOfCurrentPage, getTotalPages } from './lib/paginate.js'
 import { products } from './data/products.js'
