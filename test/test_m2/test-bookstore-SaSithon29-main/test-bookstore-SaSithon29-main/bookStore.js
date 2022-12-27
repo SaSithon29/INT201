@@ -25,8 +25,13 @@ class BookStore {
     else {
       return -1
     }
-
   }
+  // addNewBook(isbn, stocks){
+  //   if(this.stores.find(book => book.isbn===isbn)===undefined){
+  //     this.stores.push({isbn:isbn, stocks:stocks})
+  //     return this.stores[this.stores?.length-1].stocks
+  //   }else return -1
+  //  }
 
 
 
@@ -55,6 +60,13 @@ class BookStore {
       }
     })
   }
+  // sellBook(isbn, quantity){
+  //   const index = this.stores.findIndex(book => book.isbn===isbn)
+  //   if(index===-1) return -1
+  //   if(this.stores[index].stocks<quantity) return 0
+  //   this.stores[index].stocks = this.stores[index].stocks-quantity
+  //   return quantity
+  // }
 }
 
 // คืนตามที่ขายได้
