@@ -11,7 +11,13 @@ class BookMark {
   if (pageNumber < 1 || pageNumber > this.totalPages) return this.bookMarks.length
         return this.bookMarks.push(pageNumber)
   }
+//        if(pageNumber>0 && pageNumber<=this.totalPages) 
+            //// ถ้า pageNumber มากกว่า 0 และน้อยกว่า totalPages ให้ push pageNumber 
+            //// ไปใน bookMarks array
+//            this.bookMarks.push(pageNumber)
+//        return this.bookMarks.length
 
+  
   removeBookMark(pageNumber){
     const oldBook = this.bookMarks.length
     this.bookMarks =this.bookMarks.filter(book => book!==pageNumber)
