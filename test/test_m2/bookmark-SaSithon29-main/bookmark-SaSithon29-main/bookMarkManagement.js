@@ -6,18 +6,18 @@ class BookMark {
     this.totalPages=totalPages
     this.bookMarks=[]
   }
-
-  addBookMark(pageNumber){
-   return this.bookMarks.push(pageNumber >= 1 && pageNumber < this.totalPages)
+  
+  addBookMark(pageNumber) {
+  if (pageNumber < 1 || pageNumber > this.totalPages) return this.bookMarks.length
+        return this.bookMarks.push(pageNumber)
   }
 
   removeBookMark(pageNumber){
-    let bookOld = this.bookMarks.length
-    this.bookMarks = this.bookMarks.filter(book =>{book.pageNumber!==pageNumber})
-    let bookNew = this.bookMarks.length
-   return (bookOld===bookNew)?undefined:pageNumber
+    const oldBook = this.bookMarks.length
+    this.bookMarks =this.bookMarks.filter(book => book!==pageNumber)
+    const newBook =this.bookMarks.length
+   return oldBook===newBook ? undefined:pageNumber
   }
-
   // removeBookMark(pageNumber) {
 //     if (pageNumber == null || pageNumber == undefined) return undefined
 //     else {
@@ -27,18 +27,18 @@ class BookMark {
 //     }
 // }
 
-
   goToFirstBookMark(){
-   return this.bookMarks?.[0]
+    //returns the first bookMarks pageNumber. 
+    // If there are no bookMarks in an array, // **return undefined.
+    return this.bookMarks?.[0]
   }
 
   goToLastBookMark(){
-   return this.bookMarks?.[this.bookMarks.length-1]
+    return this.bookMarks?.[this.bookMarks.length-1]
   }
 
   getBookMarks(){
     return this.bookMarks
   }
-
 }
 module.exports = BookMark
