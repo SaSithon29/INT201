@@ -31,6 +31,7 @@ class CourseManagement{
         this.courses = this.courses.filter(course => course.courseId!==courseId)
         let courseNew = this.courses.length
         if(courseOld===courseNew) return -1
+        return courseId
     }
 
     getCourses(){
