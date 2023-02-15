@@ -12,8 +12,8 @@ class BookMark {
         return this.bookMarks.push(pageNumber)
   }
 //        if(pageNumber>0 && pageNumber<=this.totalPages) 
-            //// ถ้า pageNumber มากกว่า 0 และน้อยกว่า totalPages ให้ push pageNumber 
-            //// ไปใน bookMarks array
+       //// ถ้า pageNumber มากกว่า 0 และน้อยกว่า totalPages ให้ push pageNumber 
+       //// ไปใน bookMarks array
 //            this.bookMarks.push(pageNumber)
 //        return this.bookMarks.length
 
@@ -24,15 +24,23 @@ class BookMark {
     const newBook =this.bookMarks.length
    return oldBook===newBook ? undefined:pageNumber
   }
-  // removeBookMark(pageNumber) {
+
 //     if (pageNumber == null || pageNumber == undefined) return undefined
 //     else {
 //         let remove = this.bookMarks.find(page => page === pageNumber)
 //         this.bookMarks = this.bookMarks.filter(page => page !== pageNumber)
 //         return remove
 //     }
-// }
-
+  
+//     const bookMarksRemove = this.bookMarks.find(book => book===pageNumber)
+     //// หาelement ใน array ที่ตรงกับ pageNumber ถ้ามีรีเทรินตัวที่เจอออกมา ไม่มี undefined
+//     this.BookMark = this.bookMarks.filter(book => book !== pageNumber)
+    //// filter ข้อมูลเฉพาะที่ตรง condition คือ ไม่เท่ากับ  pageNumber
+ //     return bookMarksRemove
+  
+  
+  
+  
   goToFirstBookMark(){
     //returns the first bookMarks pageNumber. 
     // If there are no bookMarks in an array, // **return undefined.
