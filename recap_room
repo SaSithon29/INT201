@@ -11,7 +11,10 @@ class CourseManagement{
         let index = this.findCourseIndex(courseId)
         if(index===-1) return -1
         return this.courses[index].registeredStudents.push(studentId)
-       
+        
+       //console.log(index) ; numberOfIndex
+        //console.log(this.courses) ; array
+        //console.log(this.courses[index]) ; objectOfIndex
     }
 
 
