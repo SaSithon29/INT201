@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <style>
+            body{
+            background-image: url('./pic/sky.jpg');
+            background-repeat:no-repeat;
+            background-size:auto ;
+            }
+            #buttonPanel, #dataList{
+                background-color: aliceblue;
+            }
+            h2{
+                color: brown;
+            }
+        </style>
+    </head>
+    <body>  
+        <div id="app">    
+            <div id="buttonPanel" style="border:1px solid purple; padding:10px;margin: 20px">        
+                <button id="1">students</button>        
+                <button id="2">lecturers</button>     
+                <button id="3">subject</button>     
+            </div>    
+            <h2>Data List</h2>    
+            <div id="dataList" style="border: 1px solid green; padding:10px;margin: 20px">
+
+            </div>   
+        </div>    
+        <script src="./Event.js" type="module"></script>
+    </body>
+</html>
